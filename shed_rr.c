@@ -29,6 +29,7 @@ int main(){
 }
 
 void* task_0(void *param){
+    // set 
     pthread_exit(NULL);
 }
 
