@@ -153,15 +153,12 @@ void* task_3(){
     while(i <= n){
         int m = i + (n - i) / 2;
  
-        // Check if x is present at mid
         if (vet[m] == x)
             m = m;
  
-        // If x greater, ignore left half
         if (vet[m] < x)
             i = m + 1;
  
-        // If x is smaller, ignore right half
         else
             n = m - 1;
     }
@@ -179,7 +176,7 @@ void* task_4(){
     struct sched_param param;
 
     // Definicao da prioridade
-    param.sched_priority = 99;
+    param.sched_priority = 90;
 
     start_t = clock();
 
