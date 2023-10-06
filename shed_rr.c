@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include<stdlib.h>
 #include <pthread.h>
 #include <math.h>
 #include <unistd.h>
 #include <time.h>
 
-//Para Compilar executar em terminal -> gcc -o alias shed_rr.c -lm
-//Para executar em terminal -> ./alias
+//Para Compilar executar em terminal -> gcc -o shed shed_rr.c -lm
+//Para executar em terminal -> ./shed
 
 pthread_t thread_0, thread_1, thread_2, thread_3, thread_4;
 
@@ -45,9 +46,15 @@ void* task_0(){
     //Configurar o schedule
     pthread_setschedparam(thread_0, SCHED_RR, &param);
 
-    // Inicio do processo 
-    
+    // Inicio do processo
+    int i,j = 0;
+    while(j <= 1000000){
+        for(i = 0; i > 1000000; i++){
 
+        }
+        j++;
+    } 
+    
     end_t = clock();
     double total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
     printf("Tempo de execucao thread 0: %f\n ", total_t  );
@@ -68,7 +75,16 @@ void* task_1(){
     //Configurar o schedule
     pthread_setschedparam(thread_1, SCHED_RR, &param);
 
-    // Inicio do processo 
+    // Inicio do processo
+    int i, j, k;
+
+    for(i=0; i <= 3000; i++){
+        for(j = 300; j >= 0; j--){
+            for(k=0; k <= 30;k++){
+
+            }
+        }
+    } 
 
 
     end_t = clock();
@@ -91,7 +107,18 @@ void* task_2(){
     //Configurar o schedule
     pthread_setschedparam(thread_2, SCHED_RR, &param);
 
-    // Inicio do processo 
+    // Inicio do processo
+    int i;
+    int vet[100000];
+    int n = 100000;
+
+    for(i=0; i < n-1; i++){
+        vet[i] = rand()%100;
+    }
+
+    for(i=0; i < n-1; i++){
+        vet[i] *= 1;
+    }
 
     end_t = clock();
     double total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
@@ -114,6 +141,8 @@ void* task_3(){
     pthread_setschedparam(thread_3, SCHED_RR, &param);
 
     // Inicio do processo 
+    int i=0;
+    int vet[100];
 
     end_t = clock();
     double total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
